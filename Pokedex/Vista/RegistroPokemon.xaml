@@ -51,7 +51,7 @@
                             <Entry Placeholder="Ingrese color"
                                    PlaceholderColor="White"
                                    FontAttributes="Bold"
-                                   TextColor="White"
+                                   TextColor="#ffeb72"
                                    TextTransform="None"
                                    FontSize="20"
                                    HorizontalOptions="StartAndExpand" />
@@ -68,7 +68,7 @@
                                    FontSize="20"
                                    FontAttributes="Bold"
                                    HorizontalOptions="StartAndExpand"
-                                   TextColor="White" />
+                                   TextColor="#ffeb72" />
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal">
@@ -82,7 +82,7 @@
                                    FontSize="20"
                                    FontAttributes="Bold"
                                    HorizontalOptions="StartAndExpand"
-                                   TextColor="White" />
+                                   TextColor="#ffeb72" />
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal">
@@ -96,7 +96,7 @@
                                    FontSize="20"
                                    FontAttributes="Bold"
                                    HorizontalOptions="StartAndExpand"
-                                   TextColor="White"
+                                   TextColor="#ffeb72"
                                    Keyboard="Numeric" />
                         </StackLayout>
 
@@ -111,7 +111,7 @@
                                    FontSize="20"
                                    FontAttributes="Bold"
                                    HorizontalOptions="StartAndExpand"
-                                   TextColor="White" />
+                                   TextColor="#ffeb72" />
                         </StackLayout>
                     </StackLayout>
                 </Frame>
