@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<item>
+		<color android:color="@color/colorfondosplash"/>
+    </item>
+	<item android:drawable="@drawable/Pokemon" android:gravity="center"/>
+	<!-- <item android:drawable="@drawable/turtwing" android:gravity="center" android:left="250dp" android:width="280dp" android:height="280dp"/>
+	<item android:drawable="@drawable/turtwing" android:gravity="center" android:left="-100dp" android:width="280dp" android:height="280dp"/>
+	
+		<TextView android:gravity="center" android:textColor="#fff" android:text="Carlos CG" android:layout_width="wrap_content"
+			  android:layout_height="wrap_content" android:textSize="880dp">
+		</TextView>
+	-->
+</layer-list>
