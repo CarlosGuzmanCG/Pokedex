@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Pokedex.VistaModelo;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -15,6 +16,12 @@ namespace Pokedex.Vista
         public RegistroPokemon()
         {
             InitializeComponent();
+            BindingContext = new VMRegistroPokemon(Navigation);
+        }
+
+        private void Entry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

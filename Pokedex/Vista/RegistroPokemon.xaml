@@ -12,7 +12,11 @@
                          Margin="10">
                 <Image Source="flecha.png"
                        HeightRequest="50"
-                       WidthRequest="50" />
+                       WidthRequest="50">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding volverCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
                 <Image Source="https://i.ibb.co/tC1FVWt/Titulo-Universo-Pok-mon.png"
                        HorizontalOptions="CenterAndExpand" />
                 <Image Source="https://i.ibb.co/zrwJVH6/Pokeball-PNG.png"
@@ -38,6 +42,7 @@
                                    FontAttributes="Bold"
                                    TextColor="#ffeb72"
                                    TextTransform="None"
+                                   Text="{Binding TxtNombre}"
                                    FontSize="20"
                                    HorizontalOptions="StartAndExpand" />
                         </StackLayout>
@@ -54,6 +59,8 @@
                                    TextColor="#ffeb72"
                                    TextTransform="None"
                                    FontSize="20"
+                                   Text="{Binding TxtColorFondo}"
+                                   MaxLength="7"
                                    HorizontalOptions="StartAndExpand" />
                         </StackLayout>
 
@@ -68,7 +75,8 @@
                                    FontSize="20"
                                    FontAttributes="Bold"
                                    HorizontalOptions="StartAndExpand"
-                                   TextColor="#ffeb72" />
+                                   TextColor="#ffeb72"
+                                   Text="{Binding TxtNro}" />
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal">
@@ -82,7 +90,8 @@
                                    FontSize="20"
                                    FontAttributes="Bold"
                                    HorizontalOptions="StartAndExpand"
-                                   TextColor="#ffeb72" />
+                                   TextColor="#ffeb72"
+                                   Text="{Binding TxtIcono}" />
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal">
@@ -97,7 +106,7 @@
                                    FontAttributes="Bold"
                                    HorizontalOptions="StartAndExpand"
                                    TextColor="#ffeb72"
-                                   Keyboard="Numeric" />
+                                   Text="{Binding TxtPoder}" />
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal">
@@ -111,7 +120,8 @@
                                    FontSize="20"
                                    FontAttributes="Bold"
                                    HorizontalOptions="StartAndExpand"
-                                   TextColor="#ffeb72" />
+                                   TextColor="#ffeb72"
+                                   Text="{Binding TxtColorPoder}" />
                         </StackLayout>
                     </StackLayout>
                 </Frame>
@@ -130,28 +140,30 @@
 
                 <Grid RowDefinitions="100,*"
                       Margin="0,30,0,0">
+
                     <Frame Grid.Row="1"
                            HasShadow="False"
                            WidthRequest="250"
                            HorizontalOptions="Center"
                            CornerRadius="25"
                            Margin="0,-38,0,0"
-                           BackgroundColor="#D8F3E9">
+                           BackgroundColor="{Binding TxtColorFondo}">
                         <StackLayout Margin="0,90,0,0">
-                            <Label Text="#001" />
-                            <Label Text="Nombre"
+                            <Label Text="{Binding TxtNro}" />
+                            <Label Text="{Binding TxtNombre}"
                                    CharacterSpacing="1"
                                    FontSize="20"
+                                   TextColor="Black"
                                    Margin="0,0,0,10" />
-                            <Button Text="Hoja"
-                                    BackgroundColor="#29CE69"
+                            <Button Text="{Binding TxtPoder}"
+                                    BackgroundColor="{Binding TxtColorPoder}"
                                     CornerRadius="30"
                                     HorizontalOptions="Start"
                                     TextTransform="None"
                                     HeightRequest="40" />
                         </StackLayout>
                     </Frame >
-                    <Image Source="https://i.ibb.co/2cysQRq/pokemon-PNG113.png"
+                    <Image Source="{Binding TxtIcono}"
                            Grid.RowSpan="2"
                            HeightRequest="180"
                            VerticalOptions="StartAndExpand" />
@@ -163,17 +175,19 @@
                        CornerRadius="15"
                        HasShadow="False"
                        BackgroundColor="#FFE548">
-                    <Button Text="Agregar"
+                    <Button Text="Registrar"
                             BackgroundColor="#FFE15D"
                             BorderColor="#FFF288"
+                            TextColor="Black"
                             BorderWidth="6"
                             CornerRadius="15"
                             FontAttributes="Bold"
                             TextTransform="None"
                             HorizontalOptions="Center"
                             FontSize="25"
-                            WidthRequest="120"
-                            HeightRequest="60" />
+                            WidthRequest="130"
+                            HeightRequest="60"
+                            Command="{Binding InsertarCommand}"/>
                 </Frame>
             </StackLayout>
 

@@ -5,7 +5,7 @@
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="#F0F3F4">
     <Grid RowDefinitions="80,*"
-          BackgroundColor="#E5E7E9 ">
+          BackgroundColor="#E5E7E9">
         
         <Label Text="POKEDEX" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"
                FontSize="35" TextColor="Blue"/>
@@ -13,5 +13,18 @@
         <CollectionView BackgroundColor="#ECF0F1" Grid.Row="1">
             
         </CollectionView>
+
+        <Button Text="+" 
+                Grid.Row="1"
+                BackgroundColor="Yellow"
+                VerticalOptions="End"
+                HorizontalOptions="End"
+                Margin="15" 
+                CornerRadius="50" 
+                FontSize="55"
+                FontAttributes="Bold"
+                HeightRequest="100"
+                WidthRequest="100"
+                Command="{Binding IrRegistroCommand}"/>
     </Grid>
 </ContentPage>
