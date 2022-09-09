@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Pokedex.Vista;
 using Pokedex.VistaModelo;
+using Pokedex.Datos;
 using Xamarin.Forms;
+using Pokedex.Modelo;
 
 namespace Pokedex.VistaModelo
 {
@@ -13,7 +15,7 @@ namespace Pokedex.VistaModelo
     {
         #region Variables
 
-
+        List<MPokemon> _listaPokemon;
 
         #endregion
 
@@ -21,6 +23,7 @@ namespace Pokedex.VistaModelo
         public VMListaPolemon(INavigation navigation)
         {
             Navigation = navigation;
+            MostrarPoke();
         }
 
 
@@ -28,7 +31,11 @@ namespace Pokedex.VistaModelo
 
         #region Objetos
 
-
+        public List<MPokemon> ListaPokemon
+        {
+            get { return _listaPokemon; }
+            set { SetValue(ref _listaPokemon,value); }
+        }
 
         #endregion
 
@@ -38,6 +45,11 @@ namespace Pokedex.VistaModelo
             await Navigation.PushAsync(new RegistroPokemon());
         }
 
+        public async Task MostrarPoke()
+        {
+            var funcion = new DPokemon();
+            ListaPokemon = await funcion.MostrarPokemones();
+        }
 
         #endregion
 

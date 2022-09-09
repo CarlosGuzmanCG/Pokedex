@@ -10,7 +10,44 @@
         <Label Text="POKEDEX" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"
                FontSize="35" TextColor="Blue"/>
 
-        <CollectionView BackgroundColor="#ECF0F1" Grid.Row="1">
+        <CollectionView BackgroundColor="#ECF0F1"
+                        Grid.Row="1"
+                        ItemsSource="{Binding ListaPokemon}">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid RowDefinitions="100,*"
+                          Margin="0,30,0,0">
+
+                        <Frame Grid.Row="1"
+                               HasShadow="False"
+                               WidthRequest="250"
+                               HorizontalOptions="Center"
+                               CornerRadius="25"
+                               Margin="0,-38,0,0"
+                               BackgroundColor="{Binding ColorFondo}">
+                            <StackLayout Margin="0,90,0,0">
+                                <Label Text="{Binding Nroorden}" />
+                                <Label Text="{Binding Nombre}"
+                                       CharacterSpacing="1"
+                                       FontSize="20"
+                                       TextColor="Black"
+                                       Margin="0,0,0,10" />
+                                <Button Text="{Binding Poder}"
+                                        BackgroundColor="{Binding ColorPoder}"
+                                        CornerRadius="30"
+                                        HorizontalOptions="Start"
+                                        TextTransform="None"
+                                        HeightRequest="40" />
+                            </StackLayout>
+                        </Frame >
+                        <Image Source="{Binding Icono}"
+                               Grid.RowSpan="2"
+                               HeightRequest="180"
+                               VerticalOptions="StartAndExpand" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
             
         </CollectionView>
 
