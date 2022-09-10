@@ -8,6 +8,7 @@ using Pokedex.VistaModelo;
 using Pokedex.Datos;
 using Xamarin.Forms;
 using Pokedex.Modelo;
+using System.Collections.ObjectModel;
 
 namespace Pokedex.VistaModelo
 {
@@ -15,7 +16,7 @@ namespace Pokedex.VistaModelo
     {
         #region Variables
 
-        List<MPokemon> _listaPokemon;
+        ObservableCollection<MPokemon> _listaPokemon;
 
         #endregion
 
@@ -31,10 +32,12 @@ namespace Pokedex.VistaModelo
 
         #region Objetos
 
-        public List<MPokemon> ListaPokemon
+        public ObservableCollection<MPokemon> ListaPokemon
         {
             get { return _listaPokemon; }
-            set { SetValue(ref _listaPokemon,value); }
+            set { SetValue(ref _listaPokemon,value);
+                OnpropertyChanged();
+            }
         }
 
         #endregion

@@ -6,6 +6,8 @@ using Pokedex.Conexion;
 using Firebase.Database.Query;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using Firebase.Database;
 
 namespace Pokedex.Datos
 {
@@ -25,23 +27,33 @@ namespace Pokedex.Datos
 
         }
 
-        public async Task<List<MPokemon>> MostrarPokemones()
-        {
-            return (await Cconexion.firebase.Child("Pokemon")
-                .OnceAsync<MPokemon>())
-                .Select(item => new MPokemon
-                {
-                    IdPOkemon = item.Key,
-                    Nombre = item.Object.Nombre,
-                    ColorFondo = item.Object.ColorFondo,
-                    ColorPoder = item.Object.ColorPoder,
-                    Nroorden = item.Object.Nroorden,
-                    Poder = item.Object.Poder,
-                    Icono = item.Object.Icono
-                }
-                ).ToList();
-        }
+        // 
+        //public async Task<List<MPokemon>> MostrarPokemones()
+        //{
+        //    return (await Cconexion.firebase.Child("Pokemon")
+        //        .OnceAsync<MPokemon>())
+        //        .Select(item => new MPokemon
+        //        {
+        //            IdPOkemon = item.Key,
+        //            Nombre = item.Object.Nombre,
+        //            ColorFondo = item.Object.ColorFondo,
+        //            ColorPoder = item.Object.ColorPoder,
+        //            Nroorden = item.Object.Nroorden,
+        //            Poder = item.Object.Poder,
+        //            Icono = item.Object.Icono
+        //        }
+        //        ).ToList();
+        //}
 
+        public async Task<ObservableCollection<MPokemon>> MostrarPokemones()
+        {
+            var data = await Task.Run(()=> Cconexion.firebase
+                .Child("Pokemon")
+                .AsObservable<MPokemon>()
+                .AsObservableCollection());
+
+            return data;
+        }
 
     }
 }
