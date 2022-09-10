@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Pokedex.Vista.DetallePokemon"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             xmlns:sharpnado="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush StartPoint="1,0">
@@ -10,5 +11,77 @@
                 <GradientStop Color="#D71202" Offset="0.8" />
             </LinearGradientBrush>
         </Grid.Background>
+        <StackLayout>
+            <Image Source="https://i.ibb.co/r6d9rnQ/volver.png"
+                   HeightRequest="25"
+                   HorizontalOptions="Start"
+                   Margin="10,15,0,0"/>
+            <Label Text="#001"
+                   FontSize="50"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   Margin="10,10,0,0"
+                   HorizontalOptions="Center"/>
+            <Image Source="https://i.ibb.co/31fxN7b/1200px-Charizard-SSBU.png"
+                   HeightRequest="350" />
+            <Label Text="Charizard"
+                   FontSize="40"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   Margin="0,10,0,0"
+                   HorizontalOptions="Center"/>
+
+            <Grid RowDefinitions="auto,auto">
+                <sharpnado:MaterialFrame 
+                    CornerRadius="15"
+                    MaterialBlurStyle="Light"
+                    MaterialTheme="AcrylicBlur"
+                    Margin="10,0,10,0"
+                    Grid.RowSpan="2"/>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout Margin="15,0,0,0">
+                        <Label Text="Fuego" 
+                               TextColor="White"
+                               FontSize="30"
+                               FontAttributes="Bold"/>
+                        <Label Text="Poder"
+                               HorizontalOptions="Center"
+                               TextColor="White" 
+                               FontSize="19"/>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="CenterAndExpand">
+                        <StackLayout Orientation="Horizontal"
+                                     VerticalOptions="CenterAndExpand">
+                            <BoxView HeightRequest="30"
+                                 WidthRequest="30"
+                                 BackgroundColor="Black"
+                                 CornerRadius="15"
+                                 VerticalOptions="Center"/>
+                            <BoxView HeightRequest="30"
+                                 WidthRequest="30"
+                                 BackgroundColor="Black"
+                                 CornerRadius="15"
+                                 VerticalOptions="Center" />
+                        </StackLayout>
+                        
+                        <Label Text="Colores"
+                               TextColor="White"
+                               HorizontalOptions="Center"
+                               FontSize="19"/>
+                    </StackLayout>
+                    <StackLayout Margin="0,0,10,0">
+                        <Label Text="#001"
+                               TextColor="White"
+                               FontSize="30"
+                               FontAttributes="Bold" />
+                        <Label Text="Orden"
+                               TextColor="White"
+                               FontSize="19"
+                               HorizontalOptions="Center" />
+                    </StackLayout>
+                </StackLayout>
+                <Image Source="https://i.ibb.co/tC1FVWt/Titulo-Universo-Pok-mon.png"  Grid.Row="1"/>
+            </Grid>
+        </StackLayout>
     </Grid>
 </ContentPage>
