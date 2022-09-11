@@ -54,11 +54,18 @@ namespace Pokedex.VistaModelo
             ListaPokemon = await funcion.MostrarPokemones();
         }
 
+        public async Task IrADetallePoke(MPokemon parametros)
+        {
+            await Navigation.PushAsync(new DetallePokemon(parametros));
+        }
+
         #endregion
 
         #region Comandos
 
         public ICommand IrRegistroCommand => new Command(async () => await IrRegistro());
+
+        public ICommand DetallePokeCommand => new Command(async ()=> await IrADetallePoke()); 
 
 
         #endregion

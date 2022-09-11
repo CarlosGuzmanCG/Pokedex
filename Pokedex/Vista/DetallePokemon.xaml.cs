@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Pokedex.Modelo;
+using Pokedex.VistaModelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +14,10 @@ namespace Pokedex.Vista
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetallePokemon : ContentPage
     {
-        public DetallePokemon()
+        public DetallePokemon(MPokemon parametros)
         {
             InitializeComponent();
+            BindingContext = new VMDetallePokemon(Navigation, parametros);
         }
     }
 }

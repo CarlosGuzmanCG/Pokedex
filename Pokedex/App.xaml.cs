@@ -11,7 +11,7 @@ namespace Pokedex
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new DetallePokemon());
+            MainPage = new NavigationPage(new ListaPokemon());
         }
 
         protected override void OnStart()
